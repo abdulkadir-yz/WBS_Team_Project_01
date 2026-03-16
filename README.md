@@ -9,11 +9,15 @@
 | Avatar | Name | GitHub |
 |--------|------|--------|
 | 🧑‍💻 | **Abdulkadir** | [@abdulkadir-yz](https://github.com/abdulkadir-yz) |
-| 🧑‍💻 | **Efe** | — | [@efeglr](https://github.com/efeglr) |
-| 🧑‍💻 | **Andrew** | — | [@agvn23](https://github.com/agvn23) |
+| 🧑‍💻 | **Efe** | [@efeglr](https://github.com/efeglr) |
+| 🧑‍💻 | **Andrew** | [@agvn23](https://github.com/agvn23) |
 
 ---
-
+## Mentor
+| Avatar | Name | GitHub |
+|--------|------|--------|
+| 🧑‍💻 | **Maria** | [@mariblan](https://github.com/mariblan) |
+---
 ## 📌 Project Overview
 
 A collection of **three console-based mini games** built in Python. The project focuses on applying core programming fundamentals — loops, conditionals, functions — in a hands-on, playful way, while also practicing real-world **team collaboration** using Git and GitHub workflows.
