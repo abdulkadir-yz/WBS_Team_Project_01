@@ -1,0 +1,75 @@
+import random
+
+def print_divider(char="="):
+    print("\n" + char * 45)
+
+def print_menu():
+    print_divider()
+    print("\033[31m" + "              WBS-T1 Quiz Game" + "\033[0m")
+    print_divider()
+    print("  1. Play True or False")
+    print("  2. General Knowledge")
+    print("  3. Exit")
+    print_divider()
+    return input("Enter your choice: ").strip()
+
+def get_tof_statements():
+    return [
+        ["The King of England today owns one sixth of the land on Earth.", "T"],
+        ["Penguins live in Africa.", "T"], # Fun fact: They do! (Jackass Penguins)
+        ["Los Angeles is the capital of California.", "F"]
+    ]
+
+def get_gen_questions():
+    return [
+        ["In what country is Timbuktu?", "Mali"],
+        ["What is the name of Europe's tallest mountain?", "Mount Elbrus"],
+        ["What's the name of the famous Linux penguin?", "Tux"]
+    ]
+
+def run_quiz(questions, is_tof=False):
+    random.shuffle(questions)
+    score = 0
+    
+    for q_text, answer in questions:
+        print_divider()
+        prefix = "True or False: \n" if is_tof else ""
+        print(f"{prefix}\033[92m{q_text}\033[0m")
+
+        while True:
+            guess = input("Your answer: ").strip().upper()
+            if is_tof and guess not in ("T", "F"):
+                print("Invalid input. Please enter T or F.")
+            elif not guess:
+                print("Input cannot be empty.")
+            else:
+                break
+
+        if guess == answer.upper():
+            print("\n" + "↓" * 45)
+            print("\033[31m" + "                Correct!" + "\033[0m")
+            score += 1
+        else:
+            print("\n" + "↓" * 45)
+            print("\033[31m" + f"              Incorrect! (Ans: {answer})" + "\033[0m")
+
+    print_divider()
+    print("\033[31m" + "GAME OVER!" + "\033[0m" + "\033[92m" + f"Final Score: {score}/{len(questions)}" + "\033[0m")
+
+def main():
+    while True:
+        choice = print_menu() 
+        if choice == "1":
+            run_quiz(get_tof_statements(), is_tof=True)
+        elif choice == "2":
+            run_quiz(get_gen_questions(), is_tof=False)
+        elif choice == "3":
+            confirm = input("Are you sure you want to exit? (yes/no): ").lower()
+            if confirm == "yes":
+                print("Thanks for playing!")
+                break
+        else:
+            print("Invalid choice, please try again.")
+
+if __name__ == "__main__":
+    main()
