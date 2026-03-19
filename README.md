@@ -231,4 +231,4 @@ main_menu()
 
 ---
 
-*Built with 🐍 Python and ☕ good vibes — WBS Coding School, 2025*
+*Built with 🐍 Python and ☕ good vibes — WBS Coding School, 2026*
